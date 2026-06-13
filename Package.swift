@@ -116,10 +116,6 @@ let package = Package(
 //            name: "XXFJson",
 //            targets: ["XXFJson"]
 //        ),
-        .library(
-            name: "XXFServer",
-            targets: ["XXFServer"]
-        ),
 //        .library(
 //            name: "XXFKeychain",
 //            targets: ["XXFKeychain"]
@@ -215,12 +211,6 @@ let package = Package(
         /// .package(url: "https://github.com/NBXXF/XXFHighwayHash.swift.git", from: "1.0.0"),
         .package(url: "https://github.com/NBXXF/XXFXXHash.swift.git", from: "1.0.0"),
         // .package(url: "https://github.com/kstenerud/KSCrash.git", from: "2.2.0"),
-
-        /// 服务器开发框架
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.115.0"),
-        .package(url: "https://github.com/vapor/websocket-kit.git", from: "2.16.1"),
-        .package(url: "https://github.com/yene/GCDWebServer.git", from: "3.5.7"),
-        // .package(url: "https://github.com/swift-server/async-http-client.git", from: "1.26.1"),///大规模请求其他api,NIO实现
 
         /// hud组件
         // .package(url: "https://github.com/relatedcode/ProgressHUD", from: "14.1.3"),
@@ -487,24 +477,6 @@ let package = Package(
             ]
         ),
         .target(
-            name: "XXFServer",
-            dependencies: [
-                "XXFFoundation",
-                "XXFJson",
-                // 接收http请求
-                .product(name: "Vapor", package: "vapor"),
-                // 接收socket
-                .product(name: "WebSocketKit", package: "websocket-kit"),
-                // 本地静态资源 HTTP 服务
-                .product(name: "GCDWebServer", package: "GCDWebServer"),
-                // 高并发请求其他http
-                // .product(name: "AsyncHTTPClient", package: "async-http-client"),
-                /// 日志
-                .product(name: "Pulse", package: "PulseCompat")
-            ]
-
-        ),
-        .target(
             name: "XXFTracker"
         ),
         .target(
@@ -664,7 +636,7 @@ let package = Package(
         ),
         .testTarget(
             name: "xxf_iosTests",
-            dependencies: ["XXFFoundation", "XXFLog", "XXFCache", "XXFServer"]
+            dependencies: ["XXFFoundation", "XXFLog", "XXFCache"]
         )
     ] + mmkvTargets
 )

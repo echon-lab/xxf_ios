@@ -1044,7 +1044,6 @@ let data = try await Luban.with().load(image).compress()
 - `XXFCacheMMKV`
 - `XXFHudiOS`
 - `XXFHudMac`
-- `XXFServer`
 - `XXFTrackerBugsnag`
 - `XXFTrackerSentry`
 - `XXFTrackerFirebase`

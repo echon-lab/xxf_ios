@@ -33,7 +33,6 @@
 | 技能 | 对应模块 |
 |:------|:------|
 | `xxf-http` | XXFHttp |
-| `xxf-server` | XXFServer |
 | `xxf-flow` | XXFFlow |
 | `xxf-speed` | XXFSpeed |
 
